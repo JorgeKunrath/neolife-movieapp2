@@ -1,0 +1,199 @@
+
+
+/*------------------------------------------------------------------------
+GERAL E VARIÁVEIS
+------------------------------------------------------------------------*/ 
+
+// $bk: #cccccc;
+// $light: #eeeeee;
+// $shadow: #aaaaaa;
+$bk: #252630;
+$bk: #17181f;
+// $bk: #16171B;
+$light: -2px -2px 12px rgba(255,255,255,0.03);
+$shadow: 5px 5px 10px rgba(0,0,0,0.3);
+$lightHover: -3px -3px 6px rgba(255,255,255,0.04);
+$shadowHover: 3px 3px 6px rgba(0,0,0,0.2);
+
+// $lightColor: #b46028;
+// $lightColor: #af4a51;
+// $lightColor: #d8521d;
+// $lightColor: #078159;
+// $lightColor: #058158;
+$lightColor: #3c1c86;
+// $lightColor: #0372a5;
+$lightStrong:  0 0 80px -10px $lightColor;
+// $nmpGradient: linear-gradient(145deg, #282933, #21222b);
+html {
+	--borderRadius: 5px;
+}
+
+
+.light {
+	position: relative;
+	background: $bk;
+	border-radius: var(--borderRadius);
+	cursor: pointer;
+	transition: all 0.3s ease-out;
+	&:before {
+		content: "";
+		position: absolute;
+		border-radius: var(--borderRadius);
+		z-index: 2;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		border: 1px solid rgba(255,255,255,0.03);
+		box-shadow: $light, $shadow;
+		transition: all 0.2s ease;
+	}
+
+	&:focus, &:hover, &.active {
+		background: $lightColor;
+		&::before {
+			box-shadow: $lightHover, $shadowHover, $lightStrong;
+			z-index: 2;
+		}
+	}
+	&:active {
+		background: lighten($lightColor, 7%);
+	}
+}
+
+
+// scrollbar
+.category, .movieList {
+    // Chrome and Opera
+    &::-webkit-scrollbar {
+        width: 10px;
+    }
+    &::-webkit-scrollbar-thumb {
+        background: #2c2d38;
+    }
+    &::-webkit-scrollbar-track {
+        background:#1f2027;
+    }
+    // Firefox
+    scrollbar-color: #2c2d38 #1f2027;
+    scrollbar-width: thin;
+    // Ie and Edge🙃
+}
+
+
+/*------------------------------------------------------------------------
+TIPOGRAFIA
+------------------------------------------------------------------------*/ 
+@import url('https://fonts.googleapis.com/css?family=Bitter:400,400i,700&display=swap');
+
+body {
+	font-family: sans-serif;
+	background: $bk;
+	color: rgba(255, 255, 255, 0.9);
+	font-family: 'Bitter', serif;
+	font-weight: 400;
+}
+
+
+
+
+
+/*------------------------------------------------------------------------
+PÁGINA INICIAL
+------------------------------------------------------------------------*/ 
+
+
+.category {
+    width: 250px;
+    min-width: 250px;
+    max-width: 250px;
+    max-height: 100vh;
+	overflow-x: auto;
+    
+    li {
+		// --borderRadius: 50px;
+        margin: 1em;
+		padding: 0.5em 1em;
+		
+    }
+}
+
+
+.flex {
+	display: flex;
+	align-items: flex-start;
+}
+
+.movieList {
+	max-height: 100vh;
+	width: 100%;
+	padding: 1em 1em 10em;
+    overflow-x: auto;
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+	grid-gap: 1.5em;
+	
+	&__cover {
+		cursor: pointer;
+		position: relative;
+		width: 100%;
+		height: 0;
+		padding-top: calc(184 / 129 * 100%);
+		border-radius: var(--borderRadius);
+		overflow: hidden;
+		box-shadow: 0 0 10px rgba(0,0,0,0.3);
+		transition: all 0.3s ease-out;
+		text-align: center;
+		line-height: 1.5;
+		img {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			min-width: 100%;
+			min-height: 100%;
+			transform: translate(-50%, -50%);
+			object-fit: cover;
+			&:before {
+				content: "";
+				position: absolute;
+				left: 10%;
+				top: 50%;
+				width: 80%;
+				height: auto;
+				transform: translateY(-50%);
+				// border: 2px solid red;
+			}
+			&:after {
+				content: "imagem não encontrada";
+				position: absolute;
+				left: 10%;
+				bottom: 5%;
+				width: 80%;
+				height: auto;
+				font-size: 80%;
+				opacity: 0.3;
+			}
+		}
+
+		&:focus, &:hover, &.active {
+			box-shadow: $lightHover, $shadowHover, $lightStrong;
+			transform: scale(1.01);
+			z-index: 2;
+		}
+		&:active {
+			transform: scale(0.98);
+		}
+	}
+
+	&__end {
+		grid-column: 1 / -1;
+		padding: 1em 1em 3em;
+		text-align: center;
+		opacity: 0.4;
+	}
+}
+
+
+/*------------------------------------------------------------------------
+MODAL DE FILME
+------------------------------------------------------------------------*/ 
