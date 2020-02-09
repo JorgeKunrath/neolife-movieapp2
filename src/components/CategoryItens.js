@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 
 import api from '../services/api'
-
+console.log(api.get('movie_details.json'));
 
 export default class CategoryItens extends Component {
   state = {
     catList: [
-      'osi',
+      'oi',
       'oi2',
       'oi3',
       'oi4',
@@ -16,7 +16,6 @@ export default class CategoryItens extends Component {
 
   handleClick = e => {
     console.log('oi');
-    console.log(api.get());
   }
 
   render() {
