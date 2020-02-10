@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/neolife-movieapp2/static/css/main.a4628b42.chunk.css",
+    "main.js": "/neolife-movieapp2/static/js/main.4e7132a7.chunk.js",
+    "main.js.map": "/neolife-movieapp2/static/js/main.4e7132a7.chunk.js.map",
+    "runtime-main.js": "/neolife-movieapp2/static/js/runtime-main.acc2089b.js",
+    "runtime-main.js.map": "/neolife-movieapp2/static/js/runtime-main.acc2089b.js.map",
+    "static/js/2.bf8ae319.chunk.js": "/neolife-movieapp2/static/js/2.bf8ae319.chunk.js",
+    "static/js/2.bf8ae319.chunk.js.map": "/neolife-movieapp2/static/js/2.bf8ae319.chunk.js.map",
+    "index.html": "/neolife-movieapp2/index.html",
+    "precache-manifest.861a185e371599c1b9e448c049d788b1.js": "/neolife-movieapp2/precache-manifest.861a185e371599c1b9e448c049d788b1.js",
+    "service-worker.js": "/neolife-movieapp2/service-worker.js",
+    "static/css/main.a4628b42.chunk.css.map": "/neolife-movieapp2/static/css/main.a4628b42.chunk.css.map",
+    "static/js/2.bf8ae319.chunk.js.LICENSE.txt": "/neolife-movieapp2/static/js/2.bf8ae319.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.acc2089b.js",
+    "static/js/2.bf8ae319.chunk.js",
+    "static/css/main.a4628b42.chunk.css",
+    "static/js/main.4e7132a7.chunk.js"
+  ]
+}
